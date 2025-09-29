@@ -1,0 +1,11 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff7b00"/>
+      <stop offset="100%" stop-color="#ff0000"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#grad)" d="M256 32l64 128-64-32-64 96 32 32-32 64 64 32 64-96-32-32 32-64z"/>
+  <text x="50%" y="420" font-size="72" font-family="Arial" fill="#00aaff" text-anchor="middle">FIREBYTE</text>
+  <text x="50%" y="470" font-size="32" font-family="Arial" fill="#00aaff" text-anchor="middle">labs.</text>
+</svg>
