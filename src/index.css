@@ -1,4 +1,646 @@
-html, body, #root {
+:root {
+  color-scheme: dark;
+  --casino-bg: radial-gradient(circle at 20% 20%, rgba(255, 0, 128, 0.18), transparent 60%),
+    radial-gradient(circle at 80% 10%, rgba(0, 255, 255, 0.16), transparent 65%),
+    radial-gradient(circle at 50% 80%, rgba(255, 255, 0, 0.12), transparent 70%),
+    #030712;
+  --casino-grid-color: rgba(255, 255, 255, 0.05);
+  --casino-highlight: rgba(255, 196, 0, 0.6);
+  --casino-secondary: rgba(148, 163, 184, 0.7);
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+}
+
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
+}
+
+body {
+  background: var(--casino-bg);
+  color: #e2e8f0;
+  overflow: hidden;
+}
+
+button {
+  font-family: inherit;
+}
+
+.scanner-shell {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  height: 100%;
+}
+
+.scanner-rail {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(24px);
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-right: 1px solid rgba(148, 163, 184, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.scanner-rail::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), transparent 60%);
+  pointer-events: none;
+}
+
+.operator-card {
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: 24px;
+  padding: 1.5rem;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  box-shadow: 0 30px 60px rgba(99, 102, 241, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.operator-card::after {
+  content: '';
+  position: absolute;
+  inset: -60% 20% auto;
+  height: 120%;
+  background: radial-gradient(circle, rgba(129, 140, 248, 0.4), transparent 70%);
+  opacity: 0.65;
+  transform: rotate(12deg);
+}
+
+.progress-bar {
+  height: 6px;
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, rgba(96, 165, 250, 0.95), rgba(236, 72, 153, 0.95));
+  transition: width 400ms ease;
+}
+
+.module-nav {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.module-nav-item {
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 18px;
+  padding: 0.75rem 1rem;
+  background: rgba(15, 23, 42, 0.65);
+  color: #cbd5f5;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 200ms ease, border 200ms ease, background 200ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.module-nav-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(236, 72, 153, 0.25), transparent 60%);
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.module-nav-item:hover {
+  transform: translateX(6px);
+  border-color: rgba(236, 72, 153, 0.6);
+}
+
+.module-nav-item:hover::after,
+.module-nav-item.active::after {
+  opacity: 1;
+}
+
+.module-nav-item.active {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: rgba(96, 165, 250, 0.6);
+  box-shadow: 0 18px 30px rgba(59, 130, 246, 0.2);
+}
+
+.module-nav-item.status-pass {
+  border-color: rgba(16, 185, 129, 0.6);
+}
+
+.module-nav-item.status-scanning {
+  border-color: rgba(129, 140, 248, 0.6);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+.module-nav-item.status-warn {
+  border-color: rgba(251, 191, 36, 0.6);
+}
+
+.module-nav-item.status-fail {
+  border-color: rgba(248, 113, 113, 0.6);
+}
+
+.scanner-stage {
+  padding: 2.5rem 3rem;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto minmax(180px, 0.35fr);
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.control-panel {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.section-title {
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-size: 0.75rem;
+  color: rgba(226, 232, 240, 0.7);
+}
+
+.telemetry-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.module-stage {
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.module-stage::-webkit-scrollbar {
+  width: 6px;
+}
+
+.module-stage::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 999px;
+}
+
+.module-card {
+  min-height: 320px;
+}
+
+.casino-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(90deg, var(--casino-grid-color) 1px, transparent 1px),
+    linear-gradient(180deg, var(--casino-grid-color) 1px, transparent 1px);
+  background-size: 24px 24px;
+  animation: gridPulse 6s linear infinite;
+}
+
+.casino-lights {
+  position: absolute;
+  inset: -50% -30%;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.25), transparent 60%);
+  animation: drift 12s ease-in-out infinite;
+}
+
+.shadow-casino-glow {
+  box-shadow: 0 25px 70px rgba(236, 72, 153, 0.2);
+}
+
+.chip-spin {
+  animation: chipSpin 12s linear infinite;
+}
+
+.slot-machine {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  background: rgba(2, 6, 23, 0.55);
+  padding: 0.75rem;
+  border-radius: 18px;
+  border: 1px solid rgba(236, 72, 153, 0.4);
+}
+
+.slot-reel {
+  height: 64px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(236, 72, 153, 0.8), rgba(59, 130, 246, 0.8));
+  animation: slotRoll 2.8s ease-in-out infinite;
+}
+
+.slot-reel:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.slot-reel:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+.radar-grid {
+  position: relative;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.3), transparent 70%);
+  border: 1px solid rgba(96, 165, 250, 0.4);
+  overflow: hidden;
+}
+
+.radar-sweep {
+  position: absolute;
+  inset: -30% -30% 50% -30%;
+  background: conic-gradient(from 0deg, rgba(125, 211, 252, 0.35), transparent 70%);
+  animation: radarSweep 4s linear infinite;
+}
+
+.radar-ping {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(125, 211, 252, 0.9);
+  transform: translate(-50%, -50%);
+  animation: radarPing 2.8s ease-out infinite;
+}
+
+.radar-ping.delay {
+  animation-delay: 0.8s;
+}
+
+.radar-ping.delay::after {
+  animation-delay: 0.8s;
+}
+
+.dice-table {
+  position: relative;
+  height: 120px;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.2), transparent 80%);
+  border: 1px solid rgba(74, 222, 128, 0.4);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.dice,
+.dice.shadow {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transform: translate(-60%, -50%);
+  animation: diceRoll 6s ease-in-out infinite;
+}
+
+.dice {
+  background: linear-gradient(135deg, rgba(74, 222, 128, 0.95), rgba(245, 158, 11, 0.95));
+  box-shadow: 0 18px 35px rgba(74, 222, 128, 0.4);
+}
+
+.dice.shadow {
+  background: radial-gradient(circle, rgba(15, 23, 42, 0.8), transparent 70%);
+  filter: blur(10px);
+  transform: translate(-40%, -35%);
+  animation-duration: 6s;
+  animation-delay: -2s;
+}
+
+.laser-grid {
+  position: relative;
+  height: 120px;
+  border: 1px solid rgba(248, 113, 113, 0.4);
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(30, 41, 59, 0.6);
+}
+
+.laser-beam {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(248, 113, 113, 0), rgba(248, 113, 113, 0.8));
+  top: 0;
+  left: 20%;
+  animation: laserSweep 5s linear infinite;
+}
+
+.laser-beam.delay {
+  left: 50%;
+  animation-delay: 1s;
+}
+
+.laser-beam.delay-2 {
+  left: 80%;
+  animation-delay: 2s;
+}
+
+.card-stack {
+  position: relative;
+  height: 120px;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  position: absolute;
+  width: 120px;
+  height: 70px;
+  border-radius: 14px;
+  border: 1px solid rgba(45, 212, 191, 0.6);
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.4), rgba(6, 182, 212, 0.4));
+  animation: cardFan 6s ease-in-out infinite;
+}
+
+.card.second {
+  transform: rotate(10deg);
+  animation-delay: 1.2s;
+}
+
+.card.third {
+  transform: rotate(-12deg);
+  animation-delay: 2.4s;
+}
+
+.camera-feed {
+  position: relative;
+  height: 120px;
+  border-radius: 18px;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.2), transparent 70%);
+  overflow: hidden;
+}
+
+.feed-scan {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0), rgba(59, 130, 246, 0.5), rgba(59, 130, 246, 0));
+  animation: feedScan 4s linear infinite;
+}
+
+.casino-button {
+  background: linear-gradient(120deg, rgba(59, 130, 246, 0.9), rgba(236, 72, 153, 0.85));
+  color: white;
+  border: none;
+  padding: 0.65rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+}
+
+.casino-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.4);
+}
+
+.casino-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.casino-button.secondary {
+  background: linear-gradient(120deg, rgba(148, 163, 184, 0.2), rgba(100, 116, 139, 0.35));
+  color: rgba(226, 232, 240, 0.8);
+}
+
+.casino-button.ghost {
+  background: transparent;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  color: rgba(226, 232, 240, 0.8);
+}
+
+.casino-trivia-popup {
+  animation: popIn 320ms ease;
+}
+
+.log-stream {
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 24px;
+  padding: 1.5rem;
+  overflow-y: auto;
+  backdrop-filter: blur(18px);
+}
+
+.log-stream.empty {
+  display: grid;
+  place-items: center;
+  color: rgba(203, 213, 225, 0.6);
+}
+
+.log-stream::-webkit-scrollbar {
+  width: 6px;
+}
+
+.log-stream::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 999px;
+}
+
+.log-entry {
+  display: grid;
+  grid-template-columns: 100px 90px 1fr;
+  gap: 1rem;
+  align-items: start;
+  font-size: 0.85rem;
+}
+
+.log-timestamp {
+  color: rgba(148, 163, 184, 0.8);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.05em;
+}
+
+.log-level {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(15, 23, 42, 0.9);
+}
+
+.log-level.info {
+  background: rgba(96, 165, 250, 0.65);
+}
+
+.log-level.success {
+  background: rgba(74, 222, 128, 0.75);
+}
+
+.log-level.warning {
+  background: rgba(251, 191, 36, 0.75);
+}
+
+.log-level.alert {
+  background: rgba(248, 113, 113, 0.75);
+}
+
+.log-message {
+  color: rgba(226, 232, 240, 0.9);
+  line-height: 1.6;
+}
+
+@keyframes gridPulse {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-12px, -12px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(-10%, -10%) rotate(0deg);
+  }
+  50% {
+    transform: translate(10%, 10%) rotate(10deg);
+  }
+  100% {
+    transform: translate(-10%, -10%) rotate(0deg);
+  }
+}
+
+@keyframes chipSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slotRoll {
+  0% {
+    transform: translateY(-5%);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(-5%);
+  }
+}
+
+@keyframes radarSweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes radarPing {
+  0% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  80% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(3);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(3);
+  }
+}
+
+@keyframes diceRoll {
+  0% {
+    transform: translate(-60%, -50%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-40%, -60%) rotate(12deg);
+  }
+  100% {
+    transform: translate(-60%, -50%) rotate(0deg);
+  }
+}
+
+@keyframes laserSweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes cardFan {
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+  50% {
+    transform: rotate(12deg) translateY(-6px);
+  }
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+}
+
+@keyframes feedScan {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(129, 140, 248, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(129, 140, 248, 0);
+  }
+}
+
+@media (max-width: 1100px) {
+  .scanner-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .scanner-rail {
+    display: none;
+  }
+
+  .scanner-stage {
+    padding: 2rem;
+  }
+
+  .control-panel {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
