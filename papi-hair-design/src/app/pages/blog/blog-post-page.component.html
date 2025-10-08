@@ -1,0 +1,17 @@
+<article class="post" *ngIf="post$ | async as post">
+  <header>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.excerpt }}</p>
+    <span>{{ post.dateISO }}</span>
+  </header>
+  <picture>
+    <img [src]="post.cover" [alt]="post.title" />
+  </picture>
+  <section class="content" [innerHTML]="post.contentHTML"></section>
+  @if (related$ | async; as related) {
+    <app-related-posts [posts]="related"></app-related-posts>
+  } @else {
+    <app-related-posts [posts]="[]"></app-related-posts>
+  }
+  <div [innerHTML]="schemaMarkup"></div>
+</article>

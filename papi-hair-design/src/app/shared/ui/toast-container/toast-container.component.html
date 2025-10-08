@@ -1,0 +1,18 @@
+<section class="toast-wrapper" aria-live="polite" aria-atomic="true">
+  <article
+    *ngFor="let toast of messages()"
+    class="toast"
+    [attr.data-type]="toast.type"
+    role="status"
+  >
+    <p>{{ toast.message }}</p>
+    <button
+      type="button"
+      class="toast__close"
+      (click)="dismiss(toast.id)"
+      aria-label="Close notification"
+    >
+      ×
+    </button>
+  </article>
+</section>

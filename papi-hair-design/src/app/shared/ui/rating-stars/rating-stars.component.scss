@@ -1,0 +1,10 @@
+.stars {
+  display: inline-flex;
+  gap: 0.2rem;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.filled {
+  color: var(--brand-gold);
+}

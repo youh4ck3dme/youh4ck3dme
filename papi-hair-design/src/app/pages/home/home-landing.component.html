@@ -1,0 +1,68 @@
+<section class="home">
+  <app-hero-parallax
+    [title]="t('hero.title')"
+    [subtitle]="t('hero.subtitle')"
+    [ctaLabel]="t('hero.ctaPrimary')"
+    [secondaryCtaLabel]="t('hero.ctaSecondary')"
+  ></app-hero-parallax>
+
+  <section class="home__quick">
+    <header>
+      <h2>{{ 'home.quickServices.title' | t }}</h2>
+      <p>{{ 'home.quickServices.subtitle' | t }}</p>
+    </header>
+    <div class="home__quick-grid">
+      <app-glass-card
+        *ngFor="let service of quickServices$ | async"
+        [heading]="service.title"
+        [description]="service.description"
+      >
+        <p class="duration">{{ service.duration }} min</p>
+      </app-glass-card>
+    </div>
+  </section>
+
+  <section class="home__before-after">
+    <header>
+      <h2>{{ 'home.beforeAfter.title' | t }}</h2>
+      <p>{{ 'home.beforeAfter.description' | t }}</p>
+    </header>
+    <div class="home__carousel" role="list">
+      <figure *ngFor="let item of spotlight$ | async" role="listitem" class="home__slide">
+        <picture>
+          <source [attr.srcset]="item.image" type="image/webp" />
+          <img [src]="item.image" [alt]="item.title" loading="lazy" />
+        </picture>
+        <figcaption>
+          <strong>{{ item.title }}</strong>
+          <span>{{ item.description }}</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="home__testimonials">
+    <header>
+      <h2>{{ 'home.testimonials.title' | t }}</h2>
+    </header>
+    <div class="home__testimonials-grid">
+      <article class="testimonial glass-panel">
+        <app-avatar src="assets/images/clients/lucia.webp" alt="Lucia" size="lg"></app-avatar>
+        <div>
+          <h3>Lucia</h3>
+          <app-rating-stars [rating]="5"></app-rating-stars>
+          <p>"Najlepší balayage v Bratislave. Lesk vydržal celé týždne."</p>
+        </div>
+      </article>
+      <article class="testimonial glass-panel">
+        <app-avatar src="assets/images/clients/tomas.webp" alt="Tomáš" size="lg"></app-avatar>
+        <div>
+          <h3>Tomáš</h3>
+          <app-rating-stars [rating]="4.5"></app-rating-stars>
+          <p>"Precízny strih, ktorý mi šetrí ranné stylingy."</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <div [innerHTML]="schemaMarkup"></div>
+</section>

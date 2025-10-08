@@ -1,0 +1,36 @@
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}
+
+.lightbox__content {
+  background: rgba(12, 12, 12, 0.95);
+  padding: 2rem;
+  border-radius: 24px;
+  max-width: min(90vw, 640px);
+  display: grid;
+  gap: 1rem;
+}
+
+picture {
+  display: block;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.lightbox__close {
+  justify-self: end;
+  background: transparent;
+  border: none;
+  color: var(--brand-white);
+  font-size: 1.5rem;
+}

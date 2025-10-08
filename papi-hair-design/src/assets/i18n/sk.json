@@ -1,0 +1,94 @@
+{
+  "brand": {
+    "name": "Papi Hair Design",
+    "tagline": "Kráľovský štýl pre každý deň"
+  },
+  "nav": {
+    "home": "Domov",
+    "services": "Služby",
+    "stylists": "Stylisti",
+    "booking": "Rezervácia",
+    "gallery": "Galéria",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "install": "Inštalácia PWA",
+    "policy": "Ochrana súkromia"
+  },
+  "hero": {
+    "title": "Luxusná starostlivosť o vlasy",
+    "subtitle": "Papi Hair Design prináša couture styling, ktorý ladí s vašou osobnosťou.",
+    "ctaPrimary": "Rezervovať termín",
+    "ctaSecondary": "Prezrieť galériu"
+  },
+  "home": {
+    "quickServices": {
+      "title": "Rýchle služby",
+      "subtitle": "Prémiové kúry, ktoré stihnete aj počas rušného dňa."
+    },
+    "beforeAfter": {
+      "title": "Pred & Po",
+      "description": "Pozrite si transformácie, ktoré naši klienti milujú."
+    },
+    "testimonials": {
+      "title": "Hodnotenia klientov"
+    }
+  },
+  "services": {
+    "title": "Služby a cenník",
+    "description": "Vyberte si z našich signature rituálov od precízneho strihu po expresné farbenie.",
+    "categories": {
+      "cut": "Strih",
+      "color": "Farbenie",
+      "styling": "Styling"
+    }
+  },
+  "stylists": {
+    "title": "Náš tím stylistov",
+    "subtitle": "Každý člen tímu má vlastnú špecializáciu a cit pre detail."
+  },
+  "booking": {
+    "title": "Rezervácia",
+    "stepService": "Vyberte službu",
+    "stepStylist": "Vyberte stylistu",
+    "stepDatetime": "Vyberte termín",
+    "stepReview": "Kontrola a potvrdenie",
+    "summary": "Súhrn rezervácie",
+    "submit": "Odoslať rezerváciu",
+    "confirmation": "Rezervácia uložená. Budeme vás kontaktovať."
+  },
+  "gallery": {
+    "title": "Galéria prác",
+    "subtitle": "Originálne looky, ktoré hrajú svetlom a textúrou."
+  },
+  "blog": {
+    "title": "Blog & Inšpirácia",
+    "readMore": "Čítať viac",
+    "related": "Súvisiace články"
+  },
+  "contact": {
+    "title": "Kontaktujte nás",
+    "cta": "Odoslať správu",
+    "fallback": "Momentálne ste offline. Správa bude odoslaná po pripojení.",
+    "success": "Správa odoslaná!",
+    "saved": "Správa uložená offline.",
+    "synced": "Offline správy odoslané."
+  },
+  "install": {
+    "title": "Ako nainštalovať aplikáciu",
+    "android": "Android: Kliknite na menu prehliadača a vyberte \"Pridať na plochu\".",
+    "ios": "iOS: Použite zdieľacie menu a zvoľte \"Pridať na plochu\".",
+    "desktop": "Desktop: Kliknite na ikonu inštalácie v adresnom riadku prehliadača."
+  },
+  "policy": {
+    "title": "Ochrana osobných údajov",
+    "intro": "V Papi Hair Design chránime vaše osobné údaje a rešpektujeme vaše súkromie."
+  },
+  "footer": {
+    "rights": "© 2024 Papi Hair Design. Všetky práva vyhradené.",
+    "address": "Laurinská 18, Bratislava"
+  },
+  "toast": {
+    "offline": "Ste offline. Pokračujete v offline režime.",
+    "online": "Ste opäť online. Synchronizujeme zmeny."
+  }
+}
