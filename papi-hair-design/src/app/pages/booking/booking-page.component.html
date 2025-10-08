@@ -1,0 +1,49 @@
+<section class="booking" [formGroup]="bookingForm">
+  <header>
+    <h1>{{ 'booking.title' | t }}</h1>
+    <p>
+      {{ 'booking.stepService' | t }} · {{ 'booking.stepStylist' | t }} ·
+      {{ 'booking.stepDatetime' | t }}
+    </p>
+  </header>
+
+  <div class="steps">
+    <app-step-service
+      [services]="(services$ | async) ?? []"
+      [form]="bookingForm"
+    ></app-step-service>
+    <app-step-stylist
+      [stylists]="(stylists$ | async) ?? []"
+      [form]="bookingForm"
+    ></app-step-stylist>
+    <app-step-datetime [slots]="slotsForSelectedStylist()" [form]="slotGroup"></app-step-datetime>
+
+    <section class="customer" formGroupName="customer">
+      <h2>4. {{ 'booking.stepReview' | t }}</h2>
+      <label>
+        Meno
+        <input formControlName="name" required />
+      </label>
+      <label>
+        Telefón
+        <input formControlName="phone" required />
+      </label>
+      <label>
+        Email
+        <input formControlName="email" type="email" required />
+      </label>
+    </section>
+    <label class="notes">
+      Poznámka pre tím
+      <textarea formControlName="notes" rows="3"></textarea>
+    </label>
+  </div>
+
+  <div class="actions">
+    <button type="button" (click)="prevStep()" [disabled]="currentStep() === 0">Späť</button>
+    <button type="button" (click)="nextStep()" [disabled]="currentStep() >= 2">Ďalej</button>
+    <button type="button" class="primary" (click)="submit()">{{ 'booking.submit' | t }}</button>
+  </div>
+
+  <app-step-review [booking]="reviewBooking()"></app-step-review>
+</section>

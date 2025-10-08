@@ -1,0 +1,13 @@
+<fieldset [formGroup]="form">
+  <legend>1. {{ 'booking.stepService' | t }}</legend>
+  <div class="service-options">
+    <label *ngFor="let service of services" [class.selected]="form.value.serviceId === service.id">
+      <input type="radio" formControlName="serviceId" [value]="service.id" />
+      <div>
+        <h3>{{ service.name }}</h3>
+        <p>{{ service.description }}</p>
+        <span>{{ service.durationMin }} min</span>
+      </div>
+    </label>
+  </div>
+</fieldset>

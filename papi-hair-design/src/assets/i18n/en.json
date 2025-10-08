@@ -1,0 +1,94 @@
+{
+  "brand": {
+    "name": "Papi Hair Design",
+    "tagline": "Couture hair artistry for every day"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "stylists": "Stylists",
+    "booking": "Booking",
+    "gallery": "Gallery",
+    "blog": "Blog",
+    "contact": "Contact",
+    "install": "Install PWA",
+    "policy": "Privacy"
+  },
+  "hero": {
+    "title": "Luxury hair care",
+    "subtitle": "Papi Hair Design delivers couture styling tailored to your personality.",
+    "ctaPrimary": "Book an appointment",
+    "ctaSecondary": "View gallery"
+  },
+  "home": {
+    "quickServices": {
+      "title": "Quick signature services",
+      "subtitle": "Premium rituals that fit into your busy schedule."
+    },
+    "beforeAfter": {
+      "title": "Before & After",
+      "description": "Explore the transformations our clients love."
+    },
+    "testimonials": {
+      "title": "Client reviews"
+    }
+  },
+  "services": {
+    "title": "Services & pricing",
+    "description": "Choose from precision cutting to expressive colour rituals.",
+    "categories": {
+      "cut": "Cutting",
+      "color": "Colouring",
+      "styling": "Styling"
+    }
+  },
+  "stylists": {
+    "title": "Our stylist collective",
+    "subtitle": "Each artist brings unique craftsmanship and storytelling."
+  },
+  "booking": {
+    "title": "Book your visit",
+    "stepService": "Select service",
+    "stepStylist": "Select stylist",
+    "stepDatetime": "Select date & time",
+    "stepReview": "Review & confirm",
+    "summary": "Booking summary",
+    "submit": "Submit booking",
+    "confirmation": "Reservation saved. We will contact you shortly."
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Hairstyles that play with light and texture."
+  },
+  "blog": {
+    "title": "Journal & insights",
+    "readMore": "Read more",
+    "related": "Related posts"
+  },
+  "contact": {
+    "title": "Get in touch",
+    "cta": "Send message",
+    "fallback": "You are offline. The message will be sent once connected.",
+    "success": "Message sent!",
+    "saved": "Message saved for later.",
+    "synced": "Offline messages have been sent."
+  },
+  "install": {
+    "title": "Install the app",
+    "android": "Android: Open browser menu and choose 'Add to Home screen'.",
+    "ios": "iOS: Use the share sheet and tap 'Add to Home Screen'.",
+    "desktop": "Desktop: Use the install icon in the browser address bar."
+  },
+  "policy": {
+    "title": "Privacy notice",
+    "intro": "At Papi Hair Design we protect your personal data and respect your privacy."
+  },
+  "footer": {
+    "rights": "© 2024 Papi Hair Design. All rights reserved.",
+    "address": "Laurinská 18, Bratislava"
+  },
+  "toast": {
+    "offline": "You are offline. Offline mode enabled.",
+    "online": "You are back online. Syncing updates."
+  }
+}

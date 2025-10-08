@@ -1,0 +1,51 @@
+<section class="gallery">
+  <header>
+    <h1>{{ 'gallery.title' | t }}</h1>
+    <p>{{ 'gallery.subtitle' | t }}</p>
+    <div class="filters">
+      <button type="button" [class.active]="!filter()" (click)="setFilter()">Všetko</button>
+      <button type="button" [class.active]="filter() === 'blond'" (click)="setFilter('blond')">
+        #blond
+      </button>
+      <button
+        type="button"
+        [class.active]="filter() === 'farbenie'"
+        (click)="setFilter('farbenie')"
+      >
+        #farbenie
+      </button>
+      <button type="button" [class.active]="filter() === 'styling'" (click)="setFilter('styling')">
+        #styling
+      </button>
+    </div>
+  </header>
+  <div class="gallery__grid">
+    <button
+      type="button"
+      class="gallery__item"
+      *ngFor="let item of items$ | async"
+      (click)="openLightbox(item)"
+      (keyup.enter)="openLightbox(item)"
+      (keyup.space)="openLightbox(item)"
+      [attr.aria-label]="item.title"
+    >
+      <picture>
+        <source [attr.srcset]="item.thumbnail" type="image/webp" />
+        <img [src]="item.thumbnail" [alt]="item.title" loading="lazy" />
+      </picture>
+      <div class="gallery__overlay">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+    </button>
+  </div>
+  <app-lightbox
+    [open]="lightboxOpen()"
+    [image]="{
+      src: activeItem()?.image ?? '',
+      title: activeItem()?.title ?? '',
+      description: activeItem()?.description,
+    }"
+    (closed)="closeLightbox()"
+  ></app-lightbox>
+</section>

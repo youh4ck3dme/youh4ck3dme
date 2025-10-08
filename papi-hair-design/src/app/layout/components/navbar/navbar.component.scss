@@ -1,0 +1,144 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 900;
+  padding: 1rem 2rem;
+  transition:
+    background var(--transition-base),
+    backdrop-filter var(--transition-base);
+  background: transparent;
+}
+
+.navbar--scrolled {
+  background: rgba(5, 5, 5, 0.75);
+  backdrop-filter: blur(16px);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.navbar__brand-mark {
+  font-weight: 700;
+  color: var(--brand-gold);
+}
+
+.navbar__nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar__nav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-white);
+  position: relative;
+}
+
+.navbar__nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.35rem;
+  width: 100%;
+  height: 2px;
+  background: var(--brand-gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-base);
+}
+
+.navbar__nav a:hover::after,
+.navbar__nav a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+.navbar__toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: var(--brand-white);
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar__item--compact {
+  display: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (max-width: 900px) {
+  .navbar__nav ul {
+    position: fixed;
+    inset: 0 0 auto;
+    margin-top: 4rem;
+    background: rgba(5, 5, 5, 0.95);
+    flex-direction: column;
+    padding: 3rem 2rem;
+    transform: translateY(-120%);
+    transition: transform var(--transition-base);
+  }
+
+  .navbar__nav ul.open {
+    transform: translateY(0);
+  }
+
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .navbar__actions > app-lang-switcher {
+    display: none;
+  }
+
+  .navbar__item--compact {
+    display: block;
+  }
+}

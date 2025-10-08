@@ -1,0 +1,16 @@
+<fieldset [formGroup]="form">
+  <legend>2. {{ 'booking.stepStylist' | t }}</legend>
+  <div class="stylist-options">
+    <label *ngFor="let stylist of stylists" [class.selected]="form.value.stylistId === stylist.id">
+      <input type="radio" formControlName="stylistId" [value]="stylist.id" />
+      <div class="stylist">
+        <app-avatar [src]="stylist.avatar" [alt]="stylist.name"></app-avatar>
+        <div>
+          <h3>{{ stylist.name }}</h3>
+          <app-rating-stars [rating]="stylist.rating"></app-rating-stars>
+          <p>{{ stylist.bio }}</p>
+        </div>
+      </div>
+    </label>
+  </div>
+</fieldset>

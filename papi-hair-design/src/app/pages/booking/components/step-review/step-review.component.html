@@ -1,0 +1,21 @@
+<section class="review" *ngIf="booking as data">
+  <h2>{{ 'booking.summary' | t }}</h2>
+  <dl>
+    <div>
+      <dt>Služba</dt>
+      <dd>{{ data.serviceId }}</dd>
+    </div>
+    <div>
+      <dt>Stylista</dt>
+      <dd>{{ data.stylistId }}</dd>
+    </div>
+    <div>
+      <dt>Termín</dt>
+      <dd>{{ data.slot.dateISO }} {{ data.slot.start }} - {{ data.slot.end }}</dd>
+    </div>
+    <div>
+      <dt>Klient</dt>
+      <dd>{{ data.customer.name }} · {{ data.customer.phone }} · {{ data.customer.email }}</dd>
+    </div>
+  </dl>
+</section>

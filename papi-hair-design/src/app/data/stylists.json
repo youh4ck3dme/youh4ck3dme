@@ -1,0 +1,41 @@
+[
+  {
+    "id": "sofia",
+    "name": "Sofia Kováčová",
+    "bio": "Master colourist s praxou z Milána a Paríža, špecialistka na balayage a lived-in blond.",
+    "skills": ["Balayage", "Glossing", "Colour correction"],
+    "avatar": "assets/images/stylists/sofia.webp",
+    "rating": 4.9,
+    "slots": [
+      { "dateISO": "2024-07-01", "start": "09:00", "end": "10:30", "isAvailable": true },
+      { "dateISO": "2024-07-01", "start": "11:00", "end": "12:30", "isAvailable": false },
+      { "dateISO": "2024-07-02", "start": "14:00", "end": "15:30", "isAvailable": true }
+    ]
+  },
+  {
+    "id": "niko",
+    "name": "Niko Horváth",
+    "bio": "Editorial stylist so skúsenosťami z fashion weekov, miluje architektonické strihy.",
+    "skills": ["Precision cuts", "Runway styling", "Texture work"],
+    "avatar": "assets/images/stylists/niko.webp",
+    "rating": 4.8,
+    "slots": [
+      { "dateISO": "2024-07-01", "start": "10:00", "end": "11:30", "isAvailable": true },
+      { "dateISO": "2024-07-02", "start": "13:00", "end": "14:00", "isAvailable": true },
+      { "dateISO": "2024-07-03", "start": "16:00", "end": "17:30", "isAvailable": false }
+    ]
+  },
+  {
+    "id": "lena",
+    "name": "Lenka Sokolová",
+    "bio": "Specialistka na zdravie vlasovej pokožky a glossing kúry. Certifikovaná trichologička.",
+    "skills": ["Trichology", "Gloss therapy", "Scalp rituals"],
+    "avatar": "assets/images/stylists/lena.webp",
+    "rating": 5,
+    "slots": [
+      { "dateISO": "2024-07-02", "start": "09:00", "end": "10:00", "isAvailable": true },
+      { "dateISO": "2024-07-02", "start": "11:00", "end": "12:00", "isAvailable": true },
+      { "dateISO": "2024-07-04", "start": "15:00", "end": "16:00", "isAvailable": true }
+    ]
+  }
+]

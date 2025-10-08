@@ -1,0 +1,111 @@
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.35), transparent 60%),
+    radial-gradient(circle at 80% 0%, rgba(0, 255, 208, 0.15), transparent 70%),
+    rgba(12, 12, 12, 0.95);
+}
+
+.hero__background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero__nebula,
+.hero__dust,
+.hero__silhouette,
+.hero__glass {
+  position: absolute;
+  inset: 0;
+  transition: transform 240ms ease;
+  will-change: transform;
+}
+
+.hero__nebula {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600"><defs><radialGradient id="g"><stop offset="0%" stop-color="%23d4af37" stop-opacity="0.45"/><stop offset="100%" stop-color="%23000000" stop-opacity="0"/></radialGradient></defs><circle cx="300" cy="300" r="300" fill="url(%23g)"/></svg>')
+    no-repeat center/cover;
+  opacity: 0.45;
+}
+
+.hero__dust {
+  background: repeating-radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2) 0 1px,
+    transparent 1px 40px
+  );
+  mix-blend-mode: screen;
+  opacity: 0.2;
+}
+
+.hero__silhouette {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><path fill="rgba(0,0,0,0.6)" d="M254 20c-24 10-55 58-70 80-16 24-34 69-34 69s-32-8-58 21c-26 28-27 66-12 96s58 62 90 68c32 7 74-2 98-22 23-19 28-48 24-74-5-28-18-52-18-52s26-12 37-42c12-31 6-73-16-104-23-32-62-51-86-40z"/></svg>')
+    no-repeat center/contain;
+  mix-blend-mode: soft-light;
+  opacity: 0.65;
+}
+
+.hero__glass {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  filter: blur(80px);
+  width: 60%;
+  height: 60%;
+  margin: auto;
+}
+
+.hero__content {
+  position: relative;
+  padding: clamp(2rem, 5vw, 4rem);
+  text-align: center;
+  max-width: 640px;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hero__content h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.btn--primary {
+  background: var(--gradient-gold);
+  color: var(--brand-deep);
+}
+
+.btn--ghost {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+@media (max-width: 720px) {
+  .hero {
+    min-height: 70vh;
+    border-radius: 16px;
+  }
+}

@@ -1,0 +1,14 @@
+<fieldset [formGroup]="form">
+  <legend>3. {{ 'booking.stepDatetime' | t }}</legend>
+  <div class="slots">
+    <button
+      type="button"
+      *ngFor="let slot of slots"
+      [disabled]="!slot.isAvailable"
+      (click)="form.patchValue(slot)"
+      [class.selected]="form.value.dateISO === slot.dateISO && form.value.start === slot.start"
+    >
+      {{ slot.dateISO }} · {{ slot.start }} - {{ slot.end }}
+    </button>
+  </div>
+</fieldset>

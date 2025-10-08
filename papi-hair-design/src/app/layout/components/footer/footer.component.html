@@ -1,0 +1,36 @@
+<footer class="footer" role="contentinfo">
+  <div class="footer__inner">
+    <section>
+      <h2 class="footer__title">Papi Hair Design</h2>
+      <p>{{ 'brand.tagline' | t }}</p>
+      <p>{{ 'footer.address' | t }}</p>
+    </section>
+    <section>
+      <h3>Menu</h3>
+      <ul>
+        <li>
+          <a routerLink="/sluzby">{{ 'nav.services' | t }}</a>
+        </li>
+        <li>
+          <a routerLink="/stylisti">{{ 'nav.stylists' | t }}</a>
+        </li>
+        <li>
+          <a routerLink="/rezervacia">{{ 'nav.booking' | t }}</a>
+        </li>
+        <li>
+          <a routerLink="/galeria">{{ 'nav.gallery' | t }}</a>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h3>Legal</h3>
+      <ul>
+        <li>
+          <a routerLink="/policy">{{ 'nav.policy' | t }}</a>
+        </li>
+        <li><a routerLink="/offline">Offline</a></li>
+      </ul>
+    </section>
+  </div>
+  <p class="footer__copyright">{{ 'footer.rights' | t }}</p>
+</footer>

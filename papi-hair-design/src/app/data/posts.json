@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "couture-blonde-care",
+    "title": "Ako sa starať o couture blond",
+    "excerpt": "Tipy od nášho tímu na zachovanie chladných tónov a maximálneho lesku medzi návštevami.",
+    "cover": "assets/images/blog/couture-blonde.webp",
+    "category": "hair-care",
+    "tags": ["blond", "care"],
+    "contentHTML": "<p>Prémiová blond si vyžaduje správnu hydratáciu a ochranu pred teplom. Používame produkty so zlatým proteínom, ktoré uzamykajú lesk.</p>",
+    "dateISO": "2024-06-10"
+  },
+  {
+    "slug": "runway-texture-trends",
+    "title": "Runway textúry na leto",
+    "excerpt": "Pozrite sa na najväčšie trendy z módnych mól a ako ich prenášame do nášho salónu.",
+    "cover": "assets/images/blog/runway-texture.webp",
+    "category": "trends",
+    "tags": ["trend", "styling"],
+    "contentHTML": "<p>Sezóna SS24 prináša expresívne textúry a kontrasty. Naučíme vás, ako si styling udržať aj doma.</p>",
+    "dateISO": "2024-05-22"
+  },
+  {
+    "slug": "scalp-rituals",
+    "title": "Prečo je dôležitá starostlivosť o pokožku hlavy",
+    "excerpt": "Trichologička Lenka vysvetľuje, ako pristupovať k pokožke hlavy ako ku kráľovskej korunke.",
+    "cover": "assets/images/blog/scalp-rituals.webp",
+    "category": "wellness",
+    "tags": ["scalp", "wellness"],
+    "contentHTML": "<p>Vlasy žiaria len vtedy, keď je pokožka v rovnováhe. V našom salóne pracujeme s biotechnologickými sérami.</p>",
+    "dateISO": "2024-04-30"
+  }
+]

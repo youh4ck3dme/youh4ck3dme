@@ -1,0 +1,29 @@
+<div
+  class="lightbox"
+  *ngIf="open"
+  role="dialog"
+  aria-modal="true"
+  tabindex="0"
+  (click)="closed.emit()"
+  (keyup.enter)="closed.emit()"
+  (keyup.space)="closed.emit()"
+  (keydown.escape)="closed.emit()"
+>
+  <div
+    class="lightbox__content"
+    tabindex="0"
+    role="document"
+    (click)="$event.stopPropagation()"
+    (keyup.enter)="$event.stopPropagation()"
+    (keyup.space)="$event.stopPropagation()"
+  >
+    <button class="lightbox__close" type="button" (click)="closed.emit()" aria-label="Close">
+      ×
+    </button>
+    <picture>
+      <img [src]="image?.src" [alt]="image?.title" />
+    </picture>
+    <h2>{{ image?.title }}</h2>
+    <p>{{ image?.description }}</p>
+  </div>
+</div>

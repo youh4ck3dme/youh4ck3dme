@@ -1,0 +1,30 @@
+<section class="stylists">
+  <header class="stylists__header">
+    <h1>{{ 'stylists.title' | t }}</h1>
+    <p>{{ 'stylists.subtitle' | t }}</p>
+  </header>
+  <div class="stylists__grid">
+    <article class="stylists__card" *ngFor="let stylist of stylists$ | async">
+      <app-avatar [src]="stylist.avatar" [alt]="stylist.name" size="lg"></app-avatar>
+      <div class="stylists__content">
+        <h2>{{ stylist.name }}</h2>
+        <app-rating-stars [rating]="stylist.rating"></app-rating-stars>
+        <p>{{ stylist.bio }}</p>
+        <ul class="stylists__skills">
+          <li *ngFor="let skill of stylist.skills">#{{ skill }}</li>
+        </ul>
+        <div class="stylists__slots">
+          <h3>Voľné termíny</h3>
+          <ul>
+            <li *ngFor="let slot of stylist.slots">
+              <span>{{ slot.dateISO }} {{ slot.start }} - {{ slot.end }}</span>
+              <span [class.available]="slot.isAvailable">{{
+                slot.isAvailable ? 'Available' : 'Booked'
+              }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
