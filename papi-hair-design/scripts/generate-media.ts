@@ -281,6 +281,15 @@ const assets: AssetSpec[] = [
 const currentFile = fileURLToPath(import.meta.url);
 const projectRoot = resolve(dirname(currentFile), '..');
 
+/**
+ * Creates a safe identifier from a file path and suffix for use as an SVG element ID.
+ * Replaces non-alphanumeric characters with hyphens, collapses multiple hyphens, and lowercases the result.
+ * This ensures the ID is valid and unique for SVG usage.
+ *
+ * @param output - The file path to convert into a safe identifier.
+ * @param suffix - A suffix to append for uniqueness (e.g., 'gradient', 'glow').
+ * @returns A safe, unique string suitable for use as an SVG element ID.
+ */
 function idFromOutput(output: string, suffix: string) {
   const safe = output.replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-').toLowerCase();
   return `${safe}-${suffix}`;
