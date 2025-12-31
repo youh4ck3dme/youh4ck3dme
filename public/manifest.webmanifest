@@ -1,0 +1,21 @@
+{
+  "name": "RiggedGuard Rampage React",
+  "short_name": "RiggedGuard",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#01040f",
+  "theme_color": "#00ffa3",
+  "description": "Aggressive casino forensic tester that sniffs tampering, MITM lanes, runtime hooks, DevTools snoops, and WebRTC anomalies.",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxOTInIGhlaWdodD0nMTkyJyB2aWV3Qm94PScwIDAgMTkyIDE5Mic+PHJlY3Qgd2lkdGg9JzE5MicgaGVpZ2h0PScxOTInIHJ4PSczOCcgZmlsbD0nIzAxMDQxMicvPjxjaXJjbGUgY3g9Jzk2JyBjeT0nOTYnIHI9Jzc0JyBmaWxsPScjMDBmZmEzJyBmaWxsLW9wYWNpdHk9JzAuMScvPjxwYXRoIGQ9J000OCAxNTRsNDgtMTE2IDQ4IDExNi00OC0yNC00OCAyNHonIGZpbGw9JyMwMGZmYT MnLz48L3N2Zz4=",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1MTInIGhlaWdodD0nNTEyJyB2aWV3Qm94PScwIDAgNTEyIDUxMic+PHJlY3Qgd2lkdGg9JzUxMicgaGVpZ2h0PSc1MTInIHJ4PSc2NCcgZmlsbD0nIzAxMDQxMicvPjxjaXJjbGUgY3g9JzI1NicgY3k9JzI1Nicgcnk9JzIwOCcgZmlsbD0nIzAwZmZhMycgZmlsbC1vcGFjaXR5PScwLjEnLz48cGF0aCBkPSdNMTI4IDM4NGw4OC0yMTYgODggMjE2LTg4LTQ0LTg4IDQ0eicgZmlsbD0nIzAwZmZhMycvPjwvc3ZnPg==",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

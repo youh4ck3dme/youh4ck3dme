@@ -1,88 +1,118 @@
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=900&color=F700FF&center=true&vCenter=true&multiline=true&width=700&lines=%F0%9F%92%BB+SYSTEM+H4CK3D%3A+INIT+COMPLETE...;%F0%9F%94%A5+YOU+ARE+NOT+READY+FOR+THIS...;%F0%9F%A7%A0+FULL+CYBER+DOMINANCE+ACTIVATED!">
-</p>
+# RiggedGuard Rampage React
 
-<h1 align="center">💀 WELCOME TO THE H4CK3D DIMENSION</h1>
-<h3 align="center">ROOTED IN CODE | MASTERED IN CHAOS | BUILT FOR CYBER WAR</h3>
+RiggedGuard Rampage React is an aggressive—but ethical—casino game forensic testing PWA. It fuses neon casino visuals with deep browser probes to spot manipulated HTML5 games, tampered runtimes, hostile proxies, and covert network peers. Every scan is passive: no exploits, just telemetry to help compliance teams keep the tables honest.
 
 ---
 
-## ⚔️ WEAPONS OF CODE DESTRUCTION
-
-### **[🔬 WP Quick Scan Malware Pro]**
-AI malware skener pre WordPress – VirusTotal, AbuseIPDB, karanténa, animácie.
-
-### **[🧠 H4CK3D AI BOTS]**
-9 AI entít trénovaných na exploitovanie Apple PCC, Safari, SEP… nonstop útok.
-
-### **[🧰 Casino Tester Pro]**
-Analyzuje RNG, entropiu, podvody, a odhaľuje „rigged modes“. AI predikcie + cron.
-
-### **[🖥️ CyberDash ROOT / PRO / LIVE]**
-Zber + vizualizácia systémových údajov: RAM, CPU, GeoIP, senzory, honeypot, SSH trap.
-
-### **[🚀 H4CK3D Speed Fusion]**
-Optimalizácia WP + cron na detekciu zmien + live notifikácie + kompresia všetkého.
-
-### **[☠️ BIG SECURITY SHIELD]**
-Launcher pre exploit moduly, honeypot, Telegram alerts, real-time threat feed, firewall.
+## 🎯 Objective
+- Validate whether a mobile WebView or browser session is running a clean, untampered casino experience.
+- Surface anomalies across TLS, JavaScript runtime integrity, DevTools activity, static asset hashes, and WebRTC topology.
+- Deliver the findings inside a self-hosted, offline-ready React PWA that respects a strict Content Security Policy.
 
 ---
 
-## ⚙️ ACTIVE SYSTEMS & INFRA
-
-- **VPS:** `80.211.196.34` – _Live root AI server_
-- **Platformy:** Termux root / Parrot OS / macOS Sonoma / Kali Linux 2025
-- **GitHub pipeline:** Auto-push + Deploy + Log sync + AI alerts
-- **Dashboards:** Web + CLI + Matrix + Discord + Telegram
-- **Zbrane:** Bash, Python, PHP, C, JS, .NET
-
----
-
-## 🔮 SKILLSET LEVEL: **OVER 9000!**
-
-| Skill | Level |
-|-------|-------|
-| Ethical Hacking | 100% |
-| Malware Analysis | 100% |
-| Reverse Engineering | 99.99% |
-| WordPress Exploits | 101% |
-| Terminal Domination | Infinity |
-| AI Assistant Creation | 100% |
+## 🏗️ Architecture Overview
+| Layer | What it does |
+| --- | --- |
+| **React Shell (`src/App.jsx`)** | Orchestrates scans, renders casino-themed detector cards, and streams telemetry events. |
+| **Detector Hook (`src/hooks/useDetectors.js`)** | Runs asynchronous probes for each module, maintains status, logs, trivia popups, and export helpers. |
+| **Module Cards (`src/components/detectors/*.jsx`)** | Dedicated UI for every forensic module (slot reels, roulette wheel, neon runtime grid, poker hand, bouncer, spyglass radar). |
+| **PWA Shell (`index.html`, `public/service-worker.js`, `public/manifest.webmanifest`)** | CSP-locked HTML shell, offline cache, runtime hash verification, and install metadata. |
+| **Telemetry + Controls (`src/components/*.jsx`)** | Control panel for full scans/exports, live log stream, and casino trivia pop-up to keep operators engaged. |
 
 ---
 
-## 🧨 IN PROGRESS
+## 🔍 Detection Modules
+1. **WebView & WebKit Intrusion Hunter**  
+   Looks for user-agent `wv` tokens, exposed WebKit bridges, and suspicious globals such as `ReactNativeWebView`. Slot-machine visuals highlight anomalies.
 
-- [x] DEFCON GRID AI
-- [x] CyberNuke audit balík
-- [ ] Live Weaponized Honeypot Tracker
-- [ ] Full Rewrite of PCC Apple Exploit (AI v2)
-- [ ] iOS Terminal Overlord
+2. **MITM & TLS Exploit Radar**  
+   Fires controlled probes against `self-signed.badssl.com` to sniff failed TLS handshakes and latency spikes that hint at proxies. Results animate through a roulette wheel.
 
----
+3. **JavaScript Hook & Runtime Monitor**  
+   Validates that `fetch`, `console.log`, and storage descriptors still appear native, flagging Proxy tampering. Neon LED tiles flicker with status.
 
-## 📡 CONTACT THE WARLORD
+4. **DevTools Intrusion Detector**  
+   Combines viewport-gap heuristics with debugger timing checks and `navigator.webdriver`. Poker cards flip to expose watchers.
 
-- Telegram: [@h4ck3d_bot](https://t.me/h4ck3d_bot)  
-- Web: [you.h4ck3d.me](https://you.h4ck3d.me)  
-- Email: `you@h4ck3d.me`  
-- Discord: `youh4ck3d#9999`
+5. **Resource & Integrity Verifier**  
+   Uses SHA-256 to hash cached assets (HTML, manifest, offline shell, service worker). The service worker and UI both escalate if hashes deviate. Visualized as a nightclub bouncer at the velvet rope.
 
----
+6. **WebRTC & Network Spyglass**  
+   Negotiates a local peer connection, inspects ICE candidates, and flags relay-only or missing private IP entries. The spyglass console glows with STUN intel.
 
-## ⚡ QUOTE FROM THE DARK SIDE
-
-> **"We are not hackers.  
-We are system architects rewriting the rules of the digital world."**
+Each module reports a status (`idle`, `running`, `pass`, `warning`, `alert`) and streams details to the telemetry log for audit trails.
 
 ---
 
-## LIVE ASCII 
-     _    _   _   ___ ___ ___  ___ ___ ___ 
-  | |_| |_| |_| | __| __| _ \/ __| _ \ __|
-  |  _|  _|  _| | _|| _||   /\__ \   / _| 
-  |_| |_| |_|  |_| |_| |_|_\|___/_|_\___|
+## 🖥️ UI & Gameplay Notes
+- Dark neon casino theme (`src/styles.css`) with slot reels, roulette animations, poker flips, siren lights, and radar sweeps.
+- **Control buttons:** Run Full Scan, export JSON/CSV reports, and clear logs.
+- **Telemetry stream:** Timestamped log with severity coloring and module tags.
+- **Casino trivia:** Random facts appear during long scans (e.g., Monte Carlo magnets, Macau dice swaps) to keep analysts entertained.
+- Fully responsive down to phone breakpoints.
 
-           YOUH4CK3DME SYSTEM CORE
-       AI x CyberSec x Exploit Mastery
+---
+
+## 🧰 Setup & Scripts
+```bash
+npm install
+npm run dev      # Vite dev server with hot reload
+npm run build    # Production build (outputs to dist/)
+npm run preview  # Preview the production bundle
+```
+
+After building, host the contents of `dist/` on any static server (e.g., `npx serve dist`, `python3 -m http.server`).
+
+---
+
+## 📱 PWA Behavior
+- `index.html` enforces CSP: `default-src 'self'` and allows BadSSL images/connects only for the TLS radar.
+- `public/manifest.webmanifest` defines name, theme color (#00ffa3), start URL, and embedded SVG icons.
+- `public/service-worker.js` precaches the shell, offers an offline fallback (`public/offline.html`), and verifies cached assets against `public/integrity-manifest.json` (SHA-256, Base64).
+- Service worker messages feed back into the Integrity Verifier module for real-time tamper alerts.
+
+---
+
+## 🔐 Security & Ethics
+- Passive detection only—no exploitation or unauthorized tampering.
+- Hash verification + CSP defend against injected scripts or CDN drift.
+- Exported telemetry keeps auditors and compliance teams in sync.
+- Use RiggedGuard Rampage React only in environments where you have authorization to audit casino games or platforms.
+
+---
+
+## 📝 Reports & Telemetry
+- Export telemetry as **JSON** or **CSV** via the control panel.
+- Logs roll automatically (200 entry buffer) and include timestamp, module label, severity, and message text.
+- Integrity alerts from the service worker are piped straight to the UI with expected vs. observed hash values.
+
+---
+
+## 🎰 Casino Trivia Sampler
+RiggedGuard includes pop-ups with nuggets such as:
+- Monte Carlo roulette magnets of 1842—the birth of forensic sweeps.
+- Vegas sportsbooks pairing humans with AI “line readers.”
+- Macau’s infrared dice-tracking sting operations.
+- Atlantic City slot firmware hashing every spin.
+
+They are there for morale while long probes run—feel free to extend the list in `useDetectors.js`.
+
+---
+
+## 🗺️ File Map Highlights
+```
+index.html                 # CSP-locked SPA entry
+src/App.jsx                # React orchestration shell
+src/styles.css             # Neon casino theme + animations
+src/hooks/useDetectors.js  # Detection logic & telemetry state
+src/components/            # Detector cards, telemetry log, controls, trivia popup
+public/service-worker.js   # Caching + integrity verification + messaging
+public/manifest.webmanifest# Install metadata with inline icons
+public/offline.html        # Offline fallback screen
+public/integrity-manifest.json # SHA-256 fingerprints verified at runtime
+```
+
+---
+
+Happy scanning, and keep the house fair! 🃏
