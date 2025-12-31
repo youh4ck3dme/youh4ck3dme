@@ -1,0 +1,13 @@
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 160px);
+  padding: 0 1.5rem 3rem;
+  gap: 4rem;
+}
+
+@media (min-width: 768px) {
+  .app-shell {
+    padding: 0 3rem 4rem;
+  }
+}

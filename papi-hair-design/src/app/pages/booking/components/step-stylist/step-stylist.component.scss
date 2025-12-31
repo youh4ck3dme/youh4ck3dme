@@ -1,0 +1,8 @@
+@import '../step-service/step-service.component.scss';
+
+.stylist {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: center;
+}

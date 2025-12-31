@@ -1,0 +1,79 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app-shell",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/*.js"
+        ]
+      }
+    },
+    {
+      "name": "static-assets",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/icons/**",
+          "/assets/images/**"
+        ]
+      },
+      "cacheConfig": {
+        "maxSize": 80,
+        "maxAge": "30d"
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "image-runtime",
+      "urls": [
+        "/assets/images/.*"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 60,
+        "maxAge": "30d"
+      }
+    },
+    {
+      "name": "json-data",
+      "urls": [
+        "/assets/i18n/.*",
+        "/assets/data/.*"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 20,
+        "maxAge": "1d",
+        "timeout": "10s"
+      }
+    },
+    {
+      "name": "pages",
+      "urls": [
+        "/",
+        "/sluzby",
+        "/stylisti",
+        "/rezervacia",
+        "/galeria",
+        "/blog",
+        "/blog/.*",
+        "/kontakt",
+        "/install",
+        "/policy"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 20,
+        "maxAge": "1d",
+        "timeout": "10s"
+      }
+    }
+  ]
+}

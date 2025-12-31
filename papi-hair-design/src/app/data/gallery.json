@@ -1,0 +1,50 @@
+[
+  {
+    "id": "nebula-blonde",
+    "title": "Nebula Blonde",
+    "tags": ["blond", "balayage"],
+    "description": "Balayage s kozmetickým glossingom a luxusným leskom.",
+    "image": "assets/images/gallery/nebula-blonde.webp",
+    "thumbnail": "assets/images/gallery/nebula-blonde-thumb.webp"
+  },
+  {
+    "id": "luminous-copper",
+    "title": "Luminous Copper",
+    "tags": ["farbenie", "meď"],
+    "description": "Tepelné odtiene s 3D kontúrovaním pre odvážny look.",
+    "image": "assets/images/gallery/luminous-copper.webp",
+    "thumbnail": "assets/images/gallery/luminous-copper-thumb.webp"
+  },
+  {
+    "id": "editorial-wave",
+    "title": "Editorial Wave",
+    "tags": ["styling", "runway"],
+    "description": "Runway styling s 4D pohybom a jemným svetelným gradientom.",
+    "image": "assets/images/gallery/editorial-wave.webp",
+    "thumbnail": "assets/images/gallery/editorial-wave-thumb.webp"
+  },
+  {
+    "id": "glass-bob",
+    "title": "Glass Bob",
+    "tags": ["strih", "krátke"],
+    "description": "Dokonalý bob s glass hair efektom.",
+    "image": "assets/images/gallery/glass-bob.webp",
+    "thumbnail": "assets/images/gallery/glass-bob-thumb.webp"
+  },
+  {
+    "id": "velvet-brunette",
+    "title": "Velvet Brunette",
+    "tags": ["farbenie", "brunette"],
+    "description": "Sametové brunet odlesky so shadow root technikou.",
+    "image": "assets/images/gallery/velvet-brunette.webp",
+    "thumbnail": "assets/images/gallery/velvet-brunette-thumb.webp"
+  },
+  {
+    "id": "halo-updo",
+    "title": "Halo Updo",
+    "tags": ["styling", "svadobné"],
+    "description": "Svadobný účes so zlatým práškovým akcentom.",
+    "image": "assets/images/gallery/halo-updo.webp",
+    "thumbnail": "assets/images/gallery/halo-updo-thumb.webp"
+  }
+]

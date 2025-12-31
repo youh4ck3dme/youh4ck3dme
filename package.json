@@ -1,7 +1,10 @@
 {
   "name": "youh4ck3dme",
   "version": "1.0.0",
+<<<<<<< HEAD
   "type": "module",
+=======
+>>>>>>> 2f74502132c44341bc9f0c3e6971ed827e381c4f
   "description": "<p align=\"center\">   <img src=\"https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=900&color=F700FF&center=true&vCenter=true&multiline=true&width=700&lines=%F0%9F%92%BB+SYSTEM+H4CK3D%3A+INIT+COMPLETE...;%F0%9F%94%A5+YOU+ARE+NOT+READY+FOR+THIS...;%F0%9F%A7%A0+FULL+CYBER+DOMINANCE+ACTIVATED!\"> </p>",
   "main": "index.js",
   "scripts": {
@@ -14,6 +17,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+<<<<<<< HEAD
     "@types/node": "^25.0.3",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
@@ -29,3 +33,15 @@
     "react-dom": "^19.1.0"
   }
 }
+=======
+    "tailwindcss": "^4.1.11",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "prop-types": "^15.8.1"
+  }
+}
+>>>>>>> 2f74502132c44341bc9f0c3e6971ed827e381c4f

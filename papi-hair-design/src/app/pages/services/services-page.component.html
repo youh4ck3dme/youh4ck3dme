@@ -1,0 +1,25 @@
+<section class="services">
+  <header class="services__header">
+    <h1>{{ 'services.title' | t }}</h1>
+    <p>{{ 'services.description' | t }}</p>
+    <a routerLink="/rezervacia" class="btn-primary">{{ 'hero.ctaPrimary' | t }}</a>
+  </header>
+
+  <ng-container *ngIf="services$ | async as services">
+    <section class="services__grid">
+      <article class="services__category" *ngFor="let category of categories">
+        <h2>{{ 'services.categories.' + category | t }}</h2>
+        <ul>
+          <li *ngFor="let service of groupByCategory(services, category)">
+            <div>
+              <h3>{{ service.name }}</h3>
+              <p>{{ service.description }}</p>
+            </div>
+            <span>€{{ service.priceFrom }} - €{{ service.priceTo }}</span>
+          </li>
+        </ul>
+      </article>
+    </section>
+    <app-price-list [services]="services"></app-price-list>
+  </ng-container>
+</section>

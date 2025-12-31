@@ -1,0 +1,32 @@
+[
+  {
+    "id": "precision-cut",
+    "name": "Precision couture cut",
+    "category": "cut",
+    "durationMin": 75,
+    "priceFrom": 69,
+    "priceTo": 89,
+    "description": "Individuálne prispôsobený strih s rituálom keratínovej hydratácie.",
+    "image": "assets/images/services/precision-cut.webp"
+  },
+  {
+    "id": "color-alchemy",
+    "name": "Colour alchemy balayage",
+    "category": "color",
+    "durationMin": 150,
+    "priceFrom": 129,
+    "priceTo": 189,
+    "description": "Viacvrstvové farbenie s mikro lights technikou a glossing finishom.",
+    "image": "assets/images/services/color-alchemy.webp"
+  },
+  {
+    "id": "editorial-styling",
+    "name": "Editorial styling",
+    "category": "styling",
+    "durationMin": 60,
+    "priceFrom": 55,
+    "priceTo": 90,
+    "description": "Textúrované stylingy inšpirované módnymi editoriálmi, vhodné na eventy.",
+    "image": "assets/images/services/editorial-styling.webp"
+  }
+]

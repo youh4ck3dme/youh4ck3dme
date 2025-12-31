@@ -1,0 +1,37 @@
+<header class="navbar" [class.navbar--scrolled]="scrolled()" role="banner">
+  <div class="navbar__inner">
+    <a class="navbar__brand" routerLink="/" aria-label="Papi Hair Design home">
+      <span class="navbar__brand-mark">Papi</span>
+      <span class="navbar__brand-text">Hair Design</span>
+    </a>
+    <nav class="navbar__nav" aria-label="Primary navigation">
+      <ul [class.open]="menuOpen()">
+        <li *ngFor="let link of navLinks">
+          <a [routerLink]="link.path" routerLinkActive="active" (click)="closeMenu()">{{
+            link.label | t
+          }}</a>
+        </li>
+        <li class="navbar__item--compact">
+          <app-lang-switcher></app-lang-switcher>
+        </li>
+        <li class="navbar__item--compact">
+          <app-theme-switch></app-theme-switch>
+        </li>
+      </ul>
+    </nav>
+    <div class="navbar__actions">
+      <app-lang-switcher class="navbar__lang"></app-lang-switcher>
+      <app-theme-switch></app-theme-switch>
+      <button
+        class="navbar__toggle"
+        type="button"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="primary-menu"
+      >
+        <span></span><span></span><span></span>
+        <span class="sr-only">Menu</span>
+      </button>
+    </div>
+  </div>
+</header>

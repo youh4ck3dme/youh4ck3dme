@@ -1,0 +1,31 @@
+<section class="contact">
+  <header>
+    <h1>{{ 'contact.title' | t }}</h1>
+    <p>{{ 'contact.fallback' | t }}</p>
+  </header>
+  <div class="contact__layout">
+    <form (ngSubmit)="submit()" [formGroup]="form" novalidate>
+      <label>
+        Meno
+        <input formControlName="name" required />
+      </label>
+      <label>
+        Email
+        <input formControlName="email" type="email" required />
+      </label>
+      <label>
+        Správa
+        <textarea formControlName="message" rows="6"></textarea>
+      </label>
+      <button type="submit">{{ 'contact.cta' | t }}</button>
+    </form>
+    <aside>
+      <picture>
+        <img src="assets/images/map.webp" alt="Mapa k salónu Papi Hair Design" />
+      </picture>
+      <p>Laurinská 18, Bratislava</p>
+      <p>+421 905 123 456</p>
+      <p>hello&#64;papihair.design</p>
+    </aside>
+  </div>
+</section>

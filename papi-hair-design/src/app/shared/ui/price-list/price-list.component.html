@@ -1,0 +1,23 @@
+<table class="price-table">
+  <caption>
+    {{
+      'services.title' | t
+    }}
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">Služba</th>
+      <th scope="col">Kategória</th>
+      <th scope="col">Dĺžka</th>
+      <th scope="col">Cena</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let service of services">
+      <td>{{ service.name }}</td>
+      <td>{{ service.category }}</td>
+      <td>{{ service.durationMin }} min</td>
+      <td>€{{ service.priceFrom }} – €{{ service.priceTo }}</td>
+    </tr>
+  </tbody>
+</table>
