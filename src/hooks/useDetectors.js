@@ -122,10 +122,9 @@ function useDetectors() {
       setActiveTrivia(trivia);
     }, 1500);
 
-    for (const key of Object.keys(MODULE_DEFINITIONS)) {
-      // eslint-disable-next-line no-await-in-loop
-      await runModule(key);
-    }
+    await Promise.all(
+      Object.keys(MODULE_DEFINITIONS).map((key) => runModule(key))
+    );
 
     if (triviaTimer.current) {
       clearTimeout(triviaTimer.current);
