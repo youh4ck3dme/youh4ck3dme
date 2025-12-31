@@ -1,0 +1,84 @@
+ter name="content"># Casino Slot Machine Theme - AI Prompt
+
+**Role:** Expert UI/UX Designer & Frontend Developer specializing in casino gaming aesthetics
+
+## Requirements
+
+### 1. Color Palette
+- Primary: Deep casino felt green (#0D5C2E) or gold/brass tones (#D4AF37)
+- Secondary: Ruby red for alerts (#E63946), gold for accents (#FFD700)
+- Background: Rich velvet texture or dark mahogany wood grain
+- Metallic accents: Gold borders, chrome highlights
+- LED display: Amber/orange (#FFA500)
+
+### 2. Slot Machine Elements
+- Animated spinning reels with symbols (🍒🍋🍊🍇💎🔔)
+- Lever/arm mechanism for triggering scans
+- Paytable displays for scan results
+- Win line indicators for detection results
+
+### 3. Slot Symbol Mappings for Security
+| Symbol | Meaning |
+|--------|---------|
+| 🎰 | Scanning |
+| 💎 | Pass |
+| 🔔 | Warning |
+| 💣 | Alert |
+| 🍒 | Minor |
+| 🍋 | Info |
+
+## Deliverables Created
+1. **SlotReel.jsx** - Individual spinning reel with animated symbols
+2. **SlotLever.jsx** - Interactive lever mechanism with pull animation
+3. **SlotMachineTheme.jsx** - Complete theme wrapper with LED display
+4. **ThemeToggle.jsx** - Theme switcher with context provider
+5. **index.js** - Barrel export for all slot components
+
+## CSS Variables
+```css
+:root {
+  --slot-primary: #0D5C2E;
+  --slot-secondary: #1A3A1E;
+  --slot-gold: #D4AF37;
+  --slot-gold-light: #FFD700;
+  --slot-ruby: #E63946;
+  --slot-amber: #FFA500;
+  --slot-velvet: #2D1B4E;
+  --slot-wood: #3D2817;
+  --slot-chrome: #C0C0C0;
+  --slot-led: #FF6B00;
+}
+```
+
+## Usage Example
+```jsx
+import { SlotMachineTheme, SlotReel, SlotLever, ThemeToggle } from './components/slot';
+
+function App() {
+  return (
+    <SlotMachineTheme 
+      isScanning={isScanning}
+      results={[{ status: 'pass' }, { status: 'warning' }, { status: 'pass' }]}
+      onSpin={() => runScan()}
+    >
+      {/* Your content */}
+    </SlotMachineTheme>
+  );
+}
+```
+
+## Success Criteria Met
+- Immersive slot machine visuals with gold/chrome/wood textures
+- Smooth animations (60fps CSS animations)
+- Accessible with ARIA labels and keyboard navigation
+- Responsive across devices
+- Production-ready code with prop-types validation
+
+## Project Structure
+```
+src/components/slot/
+├── index.js           # Barrel export
+├── SlotReel.jsx       # Individual spinning reel
+├── SlotLever.jsx      # Interactive lever mechanism
+├── SlotMachineTheme.jsx # Theme wrapper with LED display
+└── ThemeToggle.jsx    # Theme switcher with context

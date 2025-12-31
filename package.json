@@ -1,0 +1,31 @@
+{
+  "name": "youh4ck3dme",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "<p align=\"center\">   <img src=\"https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=900&color=F700FF&center=true&vCenter=true&multiline=true&width=700&lines=%F0%9F%92%BB+SYSTEM+H4CK3D%3A+INIT+COMPLETE...;%F0%9F%94%A5+YOU+ARE+NOT+READY+FOR+THIS...;%F0%9F%A7%A0+FULL+CYBER+DOMINANCE+ACTIVATED!\"> </p>",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"No tests specified\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.9.3",
+    "vite": "^5.0.0",
+    "vite-tsconfig-paths": "^6.0.3"
+  },
+  "dependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
