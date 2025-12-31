@@ -21,6 +21,7 @@ const MODULE_COMPONENTS = [
 function App() {
   const { modules, logs, isScanning, activeTrivia, runFullScan, runModule, clearLogs, exportLogs, dismissTrivia } =
     useDetectors();
+  const hasLogs = logs.length > 0;
 
   return (
     <div className="app-shell">
@@ -47,9 +48,10 @@ function App() {
         onExportJson={() => exportLogs('json')}
         onExportCsv={() => exportLogs('csv')}
         disabled={isScanning}
+        hasLogs={hasLogs}
       />
 
-      <main className="module-grid" aria-live="polite">
+      <main className="module-grid" aria-live="polite" aria-busy={isScanning}>
         {MODULE_COMPONENTS.map(({ id, Component }) => (
           <Component key={id} state={modules[id]} onRun={() => runModule(id)} disabled={isScanning} />
         ))}
